@@ -38,8 +38,9 @@ def sendMessage(port, ip, message):
 			message = 'Blank Message.'           
 		s.connect((ip, port))
 		s.sendall(message)
+		data =  s.recv(1024)
 		s.close
-		return s.recv(1024)
+		return data
 	except:
 		return "No response."
 		
