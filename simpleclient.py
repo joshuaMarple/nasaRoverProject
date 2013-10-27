@@ -42,12 +42,13 @@ def sendMessage(port, ip, message):
 
 def client(ip, port):
 	while True:
-		print "Client up."
-		message = str(raw_input(">>:"))
-		sendMessage(port, ip, message)
-	except:
-		print 'unknown error'	
-		break
+		try:
+			print "Client up."
+			message = str(raw_input(">>:"))
+			sendMessage(port, ip, message)
+		except:
+			print 'unknown error'	
+			break
 
 
 
